@@ -17,7 +17,7 @@ spec:
     name: jenkins-pv-claim
     namespace: jenkins
   capacity:
-    storage: 10Gi
+    storage: 3Gi
   accessModes:
     - ReadWriteOnce
   local:
@@ -29,7 +29,7 @@ spec:
         - key: kubernetes.io/hostname
           operator: In
           values:
-          - worker-node01
+          - minikube
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

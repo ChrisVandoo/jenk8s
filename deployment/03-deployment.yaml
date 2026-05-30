@@ -24,9 +24,8 @@ spec:
       serviceAccountName: jenkins-admin
       containers:
         - name: jenkins
-          image: jenkins/jenkins:lts
-          # OPTIONAL: check for new floating-tag LTS releases whenever the pod is restarted:
-          imagePullPolicy: Always
+          image: jenkins-local:latest
+          imagePullPolicy: IfNotPresent
           resources:
             limits:
               memory: "2Gi"
