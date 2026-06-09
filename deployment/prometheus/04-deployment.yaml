@@ -23,6 +23,9 @@ spec:
         prometheus.io/scrape: "true"
         prometheus.io/port: "9090"
     spec:
+      securityContext:
+        fsGroup: 65534
+        runAsUser: 65534
       containers:
       - name: prometheus
         image: prom/prometheus
