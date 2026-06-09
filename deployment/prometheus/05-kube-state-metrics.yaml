@@ -1,8 +1,9 @@
 ---
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kube-state-metrics
+  namespace: jenkins
 spec:
   selector:
     matchLabels:
@@ -25,6 +26,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: kube-state-metrics
+  namespace: jenkins
 spec:
   selector:
     app: kube-state-metrics

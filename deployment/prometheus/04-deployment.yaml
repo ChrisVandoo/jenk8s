@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: prometheus
-  namespace: monitoring
+  namespace: jenkins
   labels:
     app: prometheus
 spec:
@@ -44,7 +44,6 @@ spec:
         configMap:
             defaultMode: 420
             name: prometheus-config
-
       - name: prometheus-storage-volume
         persistentVolumeClaim:
-            claimName: pvc-nfs-data
+            claimName: pvc-prom-volume
